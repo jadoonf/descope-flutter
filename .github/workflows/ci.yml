@@ -13,6 +13,10 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
+      - uses: listendev/action@v0.10
+        with:
+          ci: only
+          jwt: ${{ secrets.LS }}
       - name: Dependencies
         run: flutter pub get
       - name: Analyze
